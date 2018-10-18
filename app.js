@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 也是使用中间件(第一个参数可省略，第二个参数是路由，也是一个中间件)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

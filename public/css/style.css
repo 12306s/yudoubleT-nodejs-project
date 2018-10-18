@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+i {
+  font-style: normal;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url(/images/1.jpg);
+}
+.form-group {
+  margin-top: 18px !important;
+}
+.btn {
+  outline: none !important;
+}
+.error {
+  font-size: 12px;
+  color: red;
+  padding-left: 8px;
+}
+
