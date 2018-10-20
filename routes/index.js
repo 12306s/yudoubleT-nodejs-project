@@ -7,8 +7,12 @@ router.get('/', function(req, res, next) {
 });
 
 //注册页面
-router.get('/register', function (req, res) {
+router.get('/register.html', function (req, res) {
   res.render('register');
 });
 
+//登录界面
+router.get('/login.html', function (req, res) {
+  res.render('login');
+});
 module.exports = router;

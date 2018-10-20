@@ -1,7 +1,7 @@
     $(document).ready(function () {
         //昵称验证
         $('.nickname').blur(function () {
-            var nickReg=/^\w{3,5}$/;
+            var nickReg=/^\w{3,6}$/;
             if (!nickReg.test($(this).val())) {
                 $('.nickError').show();
             } else {
@@ -43,10 +43,11 @@
                 $('.phoneError').hide();
             }
         });
-        $('.btn-info').click(function () {
-            if ($('.nickname').val == '' || $('.username').val == '' || $('.password').val == '' || $('.repassword').val == '' || $('.phone').val == '') {
-                console.log(1);
+        $(".btn").click(function () {
+            if ($('.nickname').val() == '' || $('.username').val() == '' || $('.password').val == '' || $('.repassword').val() == '' || $('.phone').val() == '') {
                 alert('请正确填写表单');
+            } else {
+              $("form").submit();  
             }
         });
     });
