@@ -1,5 +1,8 @@
 <div class="footer_lef">
     <ul>
+        <li>
+            <a href="/" class="list <%= curHref == ' ' ? 'active' : ''  %>">首页</a>
+        </li>
         <% if (isAdmin) {%>  
             <li >
                 <a href="/user-manager.html" class="list <%= curHref == 'user-manager' ? 'active' : ''  %>">用户管理</a>

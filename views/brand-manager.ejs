@@ -19,8 +19,8 @@
                     </button>
                 </p>
 
-                <div class="table2">
-                    <table>
+                <div class="table2" style="width:600px">
+                    <table style="width:600px;height:360px">
                         <thead>
                             <th>序号</th>
                             <th>品牌LOGO</th>
@@ -29,7 +29,7 @@
                         </thead>
                 
                         <tbody class="tbody">
-                            <tr>
+                            <!-- <tr>
                                 <td>1</td>
                                 <td>苹果 iPhone XS Max</td>
                                 <td>苹果</td>
@@ -37,7 +37,7 @@
                                     <a class="phone-update">修改</a>
                                     <a>删除</a>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 
@@ -45,9 +45,13 @@
                 
                     <div class="alert">
                         <h2 class="user-update">修改</h2>
-                        <form class="updata" style="margin-top:50px;">
+                        <form class="updata" style="margin-top:50px;" enctype="multipart/form-data" action="javascript:;">
                             <p style="display:none;"><span>id：</span><input type="text" class="id" name="id"></p>
-                            <p><span>品牌名称：</span><input type="text" class="names" name="names"></p>
+                            <p><span>品牌名称：</span><input type="text" class="names" name="brandNames" id="brandNames"></p>
+                            <p class="pic">
+                                <span class="block">图片：</span>
+                                <input type="file" class="file" name="brandPic" id="brandPic" style="outline: none">
+                            </p>
                             <div class="formconfirm" style="margin-top:80px">
                                 <button class="confirm">
                                     <a class="updatas">确认修改</a>
@@ -55,10 +59,7 @@
                                 <button class="dont">取消</button>
                             </div>
                         </form>
-                    </div>
-                
-                
-                
+                    </div>               
                     <div class="mobile" id="Abrand">
                         <h2 class="mobile-add" style="margin-top:15px">新增品牌</h2>
                         <form class="add" enctype="multipart/form-data" action="javascript:;">
@@ -71,7 +72,7 @@
                                 <input type="file" class="file" name="logo" style="float:left;margin-left: 135px" id="logo">
                             </p>
                             <div class="button" style="width:350px;margin:50px auto;float:left">
-                                <button class="confirm" id="confirmAdd">确认新增</button>
+                                <button class="confirm1" id="confirmAdd" style="margin-right:60px;">确认新增</button>
                                 <button class="donts" id="cancel">取消</button>
                             </div>
                         </form>

@@ -10,8 +10,8 @@ router.get('/', function (req, res, next) {
 
 //注册处理
 router.post('/register',function (req,res) {
-  console.log('获取传递过来的post数据');
-  console.log(req.body);
+  // console.log('获取传递过来的post数据');
+  // console.log(req.body);
 
   var str = '';
   if (!/^[\u4e00-\u9fa5\w]{2,8}$/.test(req.body.nickname)) {
@@ -97,28 +97,34 @@ router.get('/loginout',function (req,res) {
 
 //搜索功能
 router.get('/search',function (req,res) {
-  usersModule.findUsers ({
-   page: req.query.page || 1,  //页码
-   pageSize: req.query.pageSize || 1, //每页只让他显示1条
-   searchName: req.query.nickname   //查询的字符
+  
+   if(req.query.nickname == ''){
+    res.redirect('/user-manager.html');
+   }else{
+     usersModule.findUsers({
+       page: req.query.page || 1,  //页码
+       pageSize: req.query.pageSize || 2, //每页只让他显示1条
+       searchName: req.query.nickname   //查询的字符
 
-  },function (err,data) {
-    if (err) {
-      res.render('werror',err);
-    } else {
-      res.render('user-manager', {
-        username: req.cookies.username,
-        nickname: req.query.nickname,
-        isAdmin: parseInt(req.cookies.isAdmin) ? '(管理员)' : '',
-        //这里的data是cb(null,{})返回回来的数据
-        totalPage: 0,
-        searchPage: data.totalPage,
-        userList: data.userList,
-        page: data.page,
-        curHref: ''
-      });
-    }
-  });
+     }, function (err, data) {
+       if (err) {
+         res.render('werror', err);
+       } else {
+         res.render('user-manager', {
+           username: req.cookies.username,
+           nickname: req.query.nickname,
+           isAdmin: parseInt(req.cookies.isAdmin) ? '(管理员)' : '',
+           //这里的data是cb(null,{})返回回来的数据
+           totalPage: 0,
+           searchPage: data.totalPage,
+           userList: data.userList,
+           page: data.page,
+           curHref: ''
+         });
+       }
+       console.log(req.query.nickname + "kjjjjjjjjj");
+     });
+   }
 });
 
 //删除功能
@@ -147,9 +153,7 @@ router.post('/update',function (req,res) {
       if(err) {
        console.log('执行出错');
       }else {
-        console.log('执行完成');
         res.redirect('/user-manager.html')
-        // res.send('<script>location.replace("/user-manager.html")</script>');
       }
     })
  });

@@ -15,8 +15,8 @@
             <div class="footer_rig">
                 <div class="structure">
                     <form class="search" action="/users/search" method="get" >
-                        <input type="text" placeholder="请输入你想搜索的昵称" name="nickname">
-                        <button>搜索</button>
+                        <input type="text" placeholder="请输入你想搜索的昵称" name="nickname" class="nickSearch">
+                        <button class="buttonSearch">搜索</button>
                     </form>
                     <div class="table">
                         <table>
@@ -81,6 +81,9 @@
                             <!-- 通过 传过来  totalPage 来渲染我们的 分页组件 -->
                             
                             <ul class="apart">
+                                <li>
+                                    <a href="/user-manager.html?page=1>"><<</a>
+                                </li>
                                 <%if(totalPage){
                                     for(var i=0;i<totalPage;i++){%>
                                 <li>
@@ -94,6 +97,9 @@
                                         <%=i+1%>页</a>
                                 </li>
                                 <% } }%>
+                                <li>
+                                    <a href="/user-manager.html?page=<%=totalPage%>">>></a>
+                                </li>
                             </ul>
 
                         <div class="alert">

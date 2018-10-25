@@ -280,7 +280,7 @@ body {
     opacity: 0.3;
     line-height: 100px;
     color: blueviolet;
-    font-size: 20px;
+    font-size: 36px;
     padding: 50px 0 0 350px;
 }
 .footer_rig .addPhone button {
@@ -306,7 +306,7 @@ body {
 }
 /* 表格 */
 .footer_rig .table2 {
-    width: 750px;
+    width: 700px;
     height: 500px;
     text-align: center;
     color: #000;
@@ -314,7 +314,7 @@ body {
     position: relative;
 }
 .container .footer_rig .table2 table {
-    width: 750px;
+    width: 700px;
 }
 .container .footer_rig .table2 table,tr,td,th {
     border: 1px solid #eee;

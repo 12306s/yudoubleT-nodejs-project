@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
       username: req.cookies.username,
       nickname: req.cookies.nickname,
       isAdmin: parseInt(req.cookies.isAdmin) ? '(管理员)' : '',
-      curHref: ''
+      curHref: ' '
     });
   } else {
     // 跳转到登陆页面
@@ -65,7 +65,7 @@ router.get('/user-manager.html',function (req,res) {
 //手机管理
 router.get('/mobile-manager.html', function (req, res) {
       //判断用户是否登录，并且是否是管理员
-      if (req.cookies.username && parseInt(req.cookies.isAdmin)) {
+      if (req.cookies.username) {
         res.render('mobile-manager',{
           username: req.cookies.username,
           nickname: req.cookies.nickname,
@@ -80,7 +80,7 @@ router.get('/mobile-manager.html', function (req, res) {
 //品牌管理
 router.get('/brand-manager.html', function (req, res) {
   //判断用户是否登录，并且是否是管理员
-  if (req.cookies.username && parseInt(req.cookies.isAdmin)) {
+  if (req.cookies.username) {
     res.render('brand-manager', {
       username: req.cookies.username,
       nickname: req.cookies.nickname,

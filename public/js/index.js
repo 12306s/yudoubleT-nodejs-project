@@ -13,6 +13,12 @@ $(document).ready (function () {
         });
     });
 
+    // $('.buttonSearch').click (function () {
+    //     if ($('.nickSearch').val() == '') {
+    //         alert('请输入你想搜素的昵称');
+    //     }
+    // });
+
     //点击删除，弹窗
     $(".dele").click (function () {
         var id = $(this).parent().parent().children().eq(0).text();
