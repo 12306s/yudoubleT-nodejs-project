@@ -18,7 +18,7 @@
                 <li class="usually">
                     <span>昵称:</span>
                     <input type="text" name="nickname" class="form-control nickname" placeholder="请输入昵称">
-                    <i class="error nickError" style="display:none">请输入3~6位的字符 ！</i>
+                    <i class="error nickError" style="display:none">请输入2~8位的字符 ！</i>
     
                 </li>
                 <li class="usually">
@@ -44,13 +44,14 @@
                 <li class="form-group special">
                     
                     <span>管理员:</span>
-                    <input type="radio" name="isAdmin" value="1" id="yes"/>
+                    <input type="radio" name="isAdmin" value="1" id="yes" checked/>
                     <label for="yes">yes</label>
                     <input type="radio" name="isAdmin" value="0" id="no" />
                     <label for="no">no</label>
                 </li>
                 <li>
                     <button class="btn" type="button" style="outline: none">立即注册</button>
+                    <a href="/login.html" style="margin-left:40px;color:bisque;text-align: center;line-height: 30px;">立即登录？</a>
                 </li>
             </ul>
         </form>

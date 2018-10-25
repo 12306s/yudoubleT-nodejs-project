@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+    <link rel='stylesheet' href='/css/reset.css' />
+    <link rel="stylesheet" href="/css/index.css">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+      <%- include('./common/header.ejs', { nickname: nickname, isAdmin: isAdmin }) %>
+      <div class="footer">
+        <%-include('./common/footer_lef.ejs') %>
+        <div class="footer_rig">
+          <h2 class="welcome">Welcome to us...</h2>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>

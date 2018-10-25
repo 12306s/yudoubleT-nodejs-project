@@ -1,7 +1,7 @@
     $(document).ready(function () {
         //昵称验证
         $('.nickname').blur(function () {
-            var nickReg=/^\w{3,6}$/;
+            var nickReg = /^[\u4e00-\u9fa5\w]{2,8}$/;
             if (!nickReg.test($(this).val())) {
                 $('.nickError').show();
             } else {

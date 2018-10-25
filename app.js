@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var mobileRouter = require('./routes/mobile');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 也是使用中间件(第一个参数可省略，第二个参数是路由，也是一个中间件)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/mobile', mobileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
